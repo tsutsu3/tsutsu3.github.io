@@ -1,13 +1,20 @@
-# Astro with Tailwind
+# tsutsu3.github.io
 
-```sh
-pnpm create astro@latest -- --template with-tailwindcss
-```
+Minimalist portfolio website of **tsutsu3**.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/with-tailwindcss)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/with-tailwindcss)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/with-tailwindcss/devcontainer.json)
+## 🌐 Site
 
-Astro comes with [Tailwind](https://tailwindcss.com) support out of the box. This example showcases how to style your Astro project with Tailwind.
+👉 <https://tsutsu3.github.io>
 
-For complete setup instructions, please see our [Tailwind Integration Guide](https://docs.astro.build/en/guides/integrations-guide/tailwind).
+## 🛠️ Tech Stack
+
+- [Astro](https://astro.build/) — Static Site Builder
+- [Tailwind CSS](https://tailwindcss.com/) — Styling
+- [TypeScript](https://www.typescriptlang.org/) — Type safety
+- [shadcn/ui](https://ui.shadcn.com/) — UI components
+- Deployed with **GitHub Pages**
+
+## 📦 Deployment
+
+This site is deployed automatically to **GitHub Pages** using GitHub Actions.
+Every push to the `main` branch triggers a new build & deploy.
