@@ -1,0 +1,45 @@
+---
+import "@/styles/global.css";
+import MainLayout from "../layouts/main.astro";
+import { Button } from "@/components/ui/button";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import Title from "@/components/Title";
+import { SITE, URL } from "@/constants/constants";
+import { ExternalLink } from "lucide-react";
+import LogoWall from "@/components/logoWall";
+---
+
+<MainLayout title={SITE.title}>
+  <Navbar client:load />
+
+  <main
+    class="mx-auto max-w-[1020px] flex flex-col items-center gap-24 px-5 md:mt-12 sm:mt-0"
+  >
+    <section
+      class="flex flex-col justify-center items-center gap-10 w-full min-h-[calc(100vh-146px)] text-center border-b border-white/10 px-5"
+    >
+      <img
+        src="tsutsu3.png"
+        alt="profile picture"
+        class="w-24 sm:w-36 md:w-40 rounded-full object-cover"
+      />
+      <article class="flex flex-col items-center">
+        <p class="text-neutral-600">Hi!, I'm {SITE.name}</p>
+        <Title text="Software Developer" />
+      </article>
+      <a href={URL.github} target="_blank" , rel="noopener noreferrer">
+        <Button>
+          github
+          <ExternalLink />
+        </Button>
+      </a>
+
+      <div class="mx-auto w-full max-w-5xl px-5 pt-16">
+        <LogoWall />
+      </div>
+    </section>
+
+    <Footer />
+  </main>
+</MainLayout>
