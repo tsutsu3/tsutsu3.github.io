@@ -4,17 +4,14 @@ Minimalist portfolio website of **tsutsu3**.
 
 ## 🌐 Site
 
-👉 <https://tsutsu3.github.io>
+- English — <https://tsutsu3.com>
+- 日本語 — <https://tsutsu3.com/ja/>
 
-## 🛠️ Tech Stack
+## 🧑‍💻 Commands
 
-- [Astro](https://astro.build/) — Static Site Builder
-- [Tailwind CSS](https://tailwindcss.com/) — Styling
-- [TypeScript](https://www.typescriptlang.org/) — Type safety
-- [shadcn/ui](https://ui.shadcn.com/) — UI components
-- Deployed with **GitHub Pages**
-
-## 📦 Deployment
-
-This site is deployed automatically to **GitHub Pages** using GitHub Actions.
-Every push to the `main` branch triggers a new build & deploy.
+```sh
+pnpm dev
+pnpm check
+pnpm build
+pnpm preview
+```

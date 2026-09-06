@@ -1,0 +1,28 @@
+---
+import { Code } from "astro:components";
+import type { CodeLang } from "@/data/types";
+
+interface Props {
+  caption: string;
+  lang: CodeLang;
+  code: string;
+}
+
+const { caption, lang, code } = Astro.props;
+
+const THEME = "vitesse-light";
+---
+
+<figure>
+  <figcaption>{caption}</figcaption>
+  <Code code={code} lang={lang} theme={THEME} />
+</figure>
+
+<style>
+  figcaption {
+    font-family: var(--mono);
+    font-size: var(--fs-xs);
+    color: var(--dim);
+    padding: 0 0 0.4rem;
+  }
+</style>

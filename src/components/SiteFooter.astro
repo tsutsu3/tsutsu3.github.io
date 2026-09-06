@@ -1,0 +1,42 @@
+---
+import { EXTERNAL } from "@/data/site";
+import type { Lang } from "@/i18n/lang";
+import { useTranslations } from "@/i18n/utils";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<footer>
+  <div class="wrap">
+    <p>{t("footer.note")}</p>
+    <div class="footer-links">
+      <a href={EXTERNAL.githubUser}>github.com/tsutsu3</a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    border-top: 1px solid var(--rule);
+    padding: 2rem 0 3.5rem;
+    font-size: var(--fs-md);
+    color: var(--muted);
+  }
+  footer p {
+    margin: 0 0 0.6rem;
+    max-width: 34rem;
+  }
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.15rem;
+    font-family: var(--mono);
+    font-size: var(--fs-sm);
+    margin-top: 1rem;
+  }
+</style>

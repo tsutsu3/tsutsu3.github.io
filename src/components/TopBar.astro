@@ -1,0 +1,62 @@
+---
+import { EXTERNAL } from "@/data/site";
+import type { Lang } from "@/i18n/lang";
+import { localizePath, otherLang, useTranslations } from "@/i18n/utils";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const other = otherLang(lang);
+---
+
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <b>{t("site.brand")}</b>
+    <nav>
+      <a href={EXTERNAL.githubUser}>{t("nav.github")}</a>
+      <a href={EXTERNAL.pypiUser}>{t("nav.pypi")}</a>
+      <a href={EXTERNAL.playStoreDev}>{t("nav.play")}</a>
+      <a class="lang" href={localizePath("/", other)} hreflang={other} lang={other}
+        >{t("lang.switch")}</a
+      >
+    </nav>
+  </div>
+</div>
+
+<style>
+  .topbar {
+    border-bottom: 1px solid var(--rule);
+  }
+  .topbar-inner {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    height: 52px;
+    font-size: var(--fs-md);
+  }
+  .topbar b {
+    font-family: var(--mono);
+    font-weight: 500;
+  }
+  .topbar nav {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 1.15rem;
+  }
+  .topbar nav a {
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .topbar nav a:hover {
+    color: var(--text);
+    text-decoration: underline;
+  }
+  .lang {
+    font-family: var(--mono);
+    font-size: var(--fs-sm);
+  }
+</style>

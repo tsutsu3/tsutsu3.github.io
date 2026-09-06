@@ -1,17 +1,21 @@
 // @ts-check
-
-import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
-
-import react from "@astrojs/react";
-
 import sitemap from "@astrojs/sitemap";
 
-// https://astro.build/config
 export default defineConfig({
-  vite: {
-    plugins: [tailwindcss()],
+  site: "https://tsutsu3.com",
+
+  build: { format: "preserve", inlineStylesheets: "always" },
+
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en", "ja"],
+    routing: { prefixDefaultLocale: false },
   },
-  site: "https://tsutsu3.github.io",
-  integrations: [react(), sitemap()],
+
+  integrations: [
+    sitemap({
+      i18n: { defaultLocale: "en", locales: { en: "en", ja: "ja" } },
+    }),
+  ],
 });
