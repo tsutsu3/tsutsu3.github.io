@@ -1,0 +1,26 @@
+---
+import type { Lang } from "@/i18n/lang";
+import { localizePath, useTranslations } from "@/i18n/utils";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section class="notfound">
+  <h1>{t("notfound.heading")}</h1>
+  <p>{t("notfound.lead")}</p>
+  <p><a href={localizePath("/", lang)}>{t("notfound.home")}</a></p>
+</section>
+
+<style>
+  .notfound {
+    padding: 4rem 0 8rem;
+  }
+  .notfound p {
+    margin: 0 0 1rem;
+  }
+</style>

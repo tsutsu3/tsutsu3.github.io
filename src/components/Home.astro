@@ -1,0 +1,25 @@
+---
+import { PROJECTS } from "@/data/projects";
+import type { PublishedProject } from "@/data/types";
+import { versions } from "@/data/versions";
+import type { Lang } from "@/i18n/lang";
+import Intro from "./Intro.astro";
+import ProjectSection from "./ProjectSection.astro";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const published = PROJECTS.filter((p): p is PublishedProject => p.published);
+
+const version = await versions();
+---
+
+<Intro lang={lang} />
+{
+  published.map((project) => (
+    <ProjectSection lang={lang} project={project} version={version[project.id]} />
+  ))
+}

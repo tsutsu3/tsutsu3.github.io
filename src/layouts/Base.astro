@@ -1,0 +1,78 @@
+---
+import "@/styles/global.css";
+import SiteFooter from "@/components/SiteFooter.astro";
+import TopBar from "@/components/TopBar.astro";
+import { SITE } from "@/data/site";
+import { DEFAULT_LANG, LOCALES } from "@/i18n/lang";
+import type { Lang } from "@/i18n/lang";
+import { LOCALE_TAG, localizePath, otherLang, useTranslations } from "@/i18n/utils";
+
+interface Props {
+  lang: Lang;
+  path?: string;
+}
+
+const { lang, path = "/" }: Props = Astro.props;
+const t = useTranslations(lang);
+const other = otherLang(lang);
+
+const absolute = (target: string) => new URL(target, Astro.site).href;
+const canonical = absolute(localizePath(path, lang));
+const ogImage = absolute(SITE.ogImage);
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+
+    <title>{t("site.title")}</title>
+    <meta name="description" content={t("site.description")} />
+    <link rel="canonical" href={canonical} />
+
+    {
+      LOCALES.map((locale) => (
+        <link rel="alternate" hreflang={locale} href={absolute(localizePath(path, locale))} />
+      ))
+    }
+    <link rel="alternate" hreflang="x-default" href={absolute(localizePath(path, DEFAULT_LANG))} />
+
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/fonts/public-sans-latin.woff2"
+      crossorigin
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={t("site.title")} />
+    <meta property="og:description" content={t("site.description")} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content={String(SITE.ogImageWidth)} />
+    <meta property="og:image:height" content={String(SITE.ogImageHeight)} />
+    <meta property="og:locale" content={LOCALE_TAG[lang]} />
+    <meta property="og:locale:alternate" content={LOCALE_TAG[other]} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={t("site.title")} />
+    <meta name="twitter:description" content={t("site.description")} />
+    <meta name="twitter:image" content={ogImage} />
+  </head>
+  <body>
+    <TopBar lang={lang} />
+
+    <div class="wrap">
+      <slot />
+    </div>
+
+    <SiteFooter lang={lang} />
+  </body>
+</html>

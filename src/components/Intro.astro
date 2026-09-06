@@ -1,0 +1,93 @@
+---
+import { PROJECTS } from "@/data/projects";
+import type { Lang } from "@/i18n/lang";
+import { useTranslations } from "@/i18n/utils";
+import StackRow from "./StackRow.astro";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang }: Props = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section class="intro">
+  <h1>{t("intro.heading")}</h1>
+  <p>{t("intro.lead")}</p>
+
+  <StackRow />
+
+  <div class="index">
+    {
+      PROJECTS.map((project) =>
+        project.published ? (
+          <a class="index-row" href={`#${project.id}`}>
+            <span class="index-name">{project.name}</span>
+            <span class="index-summary">{project.summary[lang]}</span>
+          </a>
+        ) : (
+          /* 未公開はリンクにしない。published: true にすれば <a> に変わる。 */
+          <div class="index-row is-unpublished">
+            <span class="index-name">{project.name}</span>
+            <span class="index-summary">
+              {project.summary[lang]} ({project.note[lang]})
+            </span>
+          </div>
+        ),
+      )
+    }
+  </div>
+</section>
+
+<style>
+  .intro {
+    padding: clamp(3rem, 7vw, 4.75rem) 0 clamp(2rem, 4vw, 2.75rem);
+  }
+  h1 {
+    margin: 0 0 1.1rem;
+    letter-spacing: -0.022em;
+    max-width: 26ch;
+  }
+  .intro p {
+    margin: 0;
+  }
+
+  .index {
+    margin: clamp(2.5rem, 5vw, 3.25rem) 0 0;
+    border-top: 1px solid var(--rule);
+  }
+  .index-row {
+    display: grid;
+    grid-template-columns: minmax(0, 20rem) minmax(0, 1fr);
+    gap: 0.15rem 1.5rem;
+    padding: 0.72rem 0;
+    border-bottom: 1px solid var(--rule);
+    text-decoration: none;
+    color: inherit;
+    align-items: baseline;
+  }
+  .index-name {
+    font-family: var(--mono);
+    font-size: var(--fs-sm);
+    color: var(--link);
+  }
+  .index-summary {
+    font-size: var(--fs-lg);
+    color: var(--muted);
+  }
+  .index-row.is-unpublished .index-name {
+    color: var(--dim);
+  }
+  a.index-row:hover {
+    background: var(--sub);
+  }
+  a.index-row:hover .index-name {
+    text-decoration: underline;
+  }
+  @media (max-width: 620px) {
+    .index-row {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
