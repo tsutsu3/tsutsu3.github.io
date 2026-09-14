@@ -5,7 +5,7 @@ import type { Lang } from "./lang";
  */
 export const UI = {
   en: {
-    "site.title": "tsutsu3 | small tools for DNS, Markdown and plain text",
+    "site.title": "tsutsu3 | Software Developer",
     "site.description":
       "Small tools for DNS, Markdown and plain text. Everything here started as something I needed myself, and stayed small enough to keep maintaining.",
     "site.brand": "tsutsu3",
@@ -42,14 +42,14 @@ export const UI = {
   },
 
   ja: {
-    "site.title": "tsutsu3 | DNS と Markdown、テキストのための小さな道具",
+    "site.title": "tsutsu3 | ソフトウェア開発者",
     "site.description":
       "DNS、Markdown、プレーンテキストのための小さなツール。どれも自分で必要になって作り始めたもので、無理なくメンテナンスを続けられる規模に保っています。",
     "site.brand": "tsutsu3",
 
     "intro.heading": "小さな道具をつくっています。",
     "intro.lead":
-      "ここにあるものはすべて、自分自身が必要として作り始めたものです。無理なくメンテナンスを続けられる規模に保っています。各プロジェクトのページから、ソースコード、ドキュメント、ダウンロード先を確認できます。",
+      "ここにあるものはすべて、自分自身が必要として作り始めたものです。無理なくメンテナンスを続けられる規模に保っています。各プロジェクトのページからソースコード、ドキュメント、ダウンロード先を確認できます。",
 
     "notfound.heading": "ページが見つかりません",
     "notfound.lead":

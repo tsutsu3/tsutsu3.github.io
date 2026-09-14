@@ -17,8 +17,8 @@ const piHoleClient = {
   githubRepo: "pi-hole-client",
 
   summary: {
-    en: "An Android client for Pi-hole",
-    ja: "Pi-hole の Android クライアント",
+    en: "Monitor and manage Pi-hole from Android",
+    ja: "Android から Pi-hole を監視・管理",
   },
 
   links: [
@@ -38,14 +38,14 @@ const piHoleClient = {
 
   body: {
     en: [
-      "An Android client for Pi-hole. It shows the statistics, query logs and domain lists of your resolver, and lets you turn blocking on and off without opening the web admin.",
-      "You can register several servers and switch between them. Three home screen widgets are included: statistics, a blocking toggle, and a compact combination of the two.",
-      "There are guides for the parts that usually go wrong: getting an API token, and getting TLS to work with self-signed certificates or an incomplete certificate chain.",
+      "An unofficial Android client for Pi-hole. Check your server status and activity from a clean dashboard, and pause or resume blocking with a single tap.",
+      "Detailed charts, ranked statistics and live query logs help you understand network activity. You can also manage allowlists, blocklists and adlist subscriptions, then update gravity from the app.",
+      "The app supports multiple servers, uses the Pi-hole v6 API while remaining compatible with core v5 features, and provides a Material You interface for phones and tablets.",
     ],
     ja: [
-      "Pi-hole の Android クライアントです。統計・クエリログ・ドメインリストを見て、ブロックの有効と無効を切り替えられます。web 管理画面を開く必要はありません。",
-      "サーバーを複数登録して切り替えられます。ホーム画面ウィジェットは統計・ブロック切り替え・その二つをまとめたコンパクト版の 3 種類です。",
-      "つまずきやすいところにはガイドを用意しています。API トークンの取得と、自己署名証明書や中間証明書が欠けている場合の TLS 設定です。",
+      "Pi-hole の非公式 Android クライアントです。見やすいダッシュボードでサーバーの状態や利用状況を確認し、ワンタップでブロックを一時停止・再開できます。",
+      "詳細なグラフやランキング、リアルタイムのクエリログからネットワークの動きを把握できます。許可リスト・ブロックリスト・adlist の管理や、gravity の更新もアプリ内で行えます。",
+      "複数サーバーの切り替えに対応しています。Pi-hole v6 API を中心に、v5 の主要機能にも対応し、スマートフォンとタブレットに最適化した Material You デザインを採用しています。",
     ],
   },
 
@@ -79,7 +79,7 @@ const markdownNamedCodeBlocks = {
 
   summary: {
     en: "Named code blocks in the VS Code Markdown preview",
-    ja: "VS Code の Markdown プレビューでコードブロックに名前をつける",
+    ja: "VS Code の Markdown プレビューにコードブロックに名前をつける",
   },
 
   links: [
@@ -103,8 +103,8 @@ const markdownNamedCodeBlocks = {
       "The rendering is done by <code>markdown-it-named-code-blocks</code>, a markdown-it plugin published separately on npm. The same output can be produced outside the editor, anywhere markdown-it runs.",
     ],
     ja: [
-      "Markdown のコードブロックに名前をつけて、VS Code のプレビューに表示する拡張です。言語名のあとにファイル名を書くと、ブロックの上にキャプションとして表示されます。",
-      "描画は <code>markdown-it-named-code-blocks</code> が担当しています。npm に別途公開している markdown-it プラグインなので、エディタの外でも markdown-it が動く環境なら同じ出力が得られます。",
+      "Markdown のコードブロックに名前をつけて、VS Code のプレビューに表示する拡張機能です。言語名のあとにファイル名を書くと、ブロックの上にキャプションとして表示されます。",
+      "描画は <code>markdown-it-named-code-blocks</code> が担当しています。npm に別途公開している markdown-it プラグインなので、エディタの外でも markdown-it が動く環境なら利用することができます。",
     ],
   },
 
@@ -175,7 +175,7 @@ const linkifyItPy = {
     ],
     ja: [
       "プレーンテキストから URL とメールアドレスを見つけるライブラリです。Unicode に対応しています。JavaScript の <code>linkify-it</code> を移植したもので、<code>markdown-it-py</code> の自動リンク処理にも使われています。",
-      "スキームのない <code>example.com</code> のようなホスト名も検出します。上流のテストスイートをそのまま移植しているため、挙動もオリジナルと揃っています。",
+      "スキームのない <code>example.com</code> のようなホスト名も検出します。上流のテストスイートをそのまま移植しているため、オリジナルと同じ挙動になります。",
       `<a href="${PROJECT_HOME.linkifyItPyDemo}">デモページ</a>で、ブラウザから試すこともできます。`,
     ],
   },
