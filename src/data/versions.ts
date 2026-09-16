@@ -29,6 +29,7 @@ async function getVersion(project: Project): Promise<string | null> {
       );
       return json?.version ?? null;
     }
+    case "cli":
     case "mobile-app": {
       const json = await fetchJson<{ name?: string; tag_name?: string }>(
         `https://api.github.com/repos/tsutsu3/${project.githubRepo}/releases/latest`,

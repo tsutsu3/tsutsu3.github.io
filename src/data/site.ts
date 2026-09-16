@@ -24,6 +24,7 @@ export const EXTERNAL = {
 /** 各プロジェクトの「正」の URL。ドメイン移行時はここを差し替える。 */
 export const PROJECT_HOME = {
   piHoleClient: "https://pi-hole-client.tsutsu3.com/",
+  gitWhenDemo: "https://git-when.tsutsu3.com/",
   linkifyItPyDemo: "https://linkify-it-py-demo.vercel.app/",
   linkifyItPyDocs: "https://linkify-it-py.readthedocs.io/en/latest/",
 } as const;

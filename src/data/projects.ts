@@ -205,6 +205,74 @@ linkify.match("Site tsutsu3.com")
 } as const satisfies Project;
 
 // ============================================================================
+// git-when: Go 製 CLI
+// ============================================================================
+const gitWhen = {
+  id: "git-when",
+  name: "git-when",
+  status: "stable",
+  license: "MIT",
+  published: true,
+  kind: "cli",
+
+  home: EXTERNAL.github("git-when"),
+  platform: "Linux / macOS / Windows",
+  githubRepo: "git-when",
+
+  summary: {
+    en: "See when commits happen across your Git repositories",
+    ja: "Git リポジトリのコミットが行われた曜日や時間帯を可視化",
+  },
+
+  links: [
+    { label: { en: "Demo", ja: "デモ" }, href: PROJECT_HOME.gitWhenDemo },
+    {
+      label: { en: "Releases", ja: "リリース" },
+      href: `${EXTERNAL.github("git-when")}/releases`,
+    },
+    {
+      label: { en: "GitHub", ja: "GitHub" },
+      href: EXTERNAL.github("git-when"),
+    },
+  ],
+
+  body: {
+    en: [
+      "A command-line tool that reads the history of your Git repositories and shows the weekdays and hours when commits happen. Give it one or more directories and it finds every repository under them.",
+      "It can produce a terminal heatmap, a static SVG for READMEs and slides, CSV data, or a self-contained HTML report that works offline. In the HTML report, you can switch repositories, authors, years and views in the browser.",
+      `See the <a href="${PROJECT_HOME.gitWhenDemo}">demo report</a> for an example of the HTML output.`,
+    ],
+    ja: [
+      "Git リポジトリの履歴を読み込み、コミットが行われた曜日と時間帯を表示するコマンドラインツールです。ディレクトリを 1 つ以上指定すると、その配下にあるすべてのリポジトリを検出します。",
+      "ターミナルのヒートマップ、README やスライドに使える静的 SVG、CSV データ、オフラインで動作する単一ファイルの HTML レポートを出力できます。HTML レポートでは、リポジトリや作成者、年、表示をブラウザ上で切り替えられます。",
+      `HTML 出力は<a href="${PROJECT_HOME.gitWhenDemo}">デモレポート</a>で確認できます。`,
+    ],
+  },
+
+  figures: [
+    {
+      type: "code",
+      caption: "terminal",
+      lang: "shellsession",
+      code: `$ git-when .
+$ git-when ~/work ~/src --format html --out git-when.html`,
+    },
+    {
+      type: "image",
+      src: "/git-when-html.png",
+      width: 1440,
+      height: 900,
+      alt: {
+        en: "git-when HTML report showing a weekday-by-hour commit heatmap",
+        ja: "曜日×時間帯のコミットヒートマップを表示した git-when の HTML レポート",
+      },
+    },
+  ],
+
+  install: "wget -qO- https://raw.githubusercontent.com/tsutsu3/git-when/main/install.sh | sh",
+} as const satisfies Project;
+
+// ============================================================================
 // unbound-admin: 未公開。一覧行のみ。
 // 公開したら published: true にして home / links / body / kind を足す。
 // 足りないフィールドは astro check が全部教えてくれる。
@@ -231,5 +299,6 @@ export const PROJECTS: readonly Project[] = [
   piHoleClient,
   markdownNamedCodeBlocks,
   linkifyItPy,
+  gitWhen,
   unboundAdmin,
 ];

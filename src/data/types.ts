@@ -77,5 +77,13 @@ interface NpmLib extends PublishedCore {
   install: string;
 }
 
-export type PublishedProject = MobileApp | PythonLib | NpmLib;
+interface Cli extends PublishedCore {
+  kind: "cli";
+  platform: string;
+  /** https://api.github.com/repos/tsutsu3/<githubRepo>/releases/latest */
+  githubRepo: string;
+  install: string;
+}
+
+export type PublishedProject = MobileApp | PythonLib | NpmLib | Cli;
 export type Project = UnpublishedProject | PublishedProject;

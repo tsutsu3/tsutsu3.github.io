@@ -26,7 +26,7 @@ rows.push({
   cls: `status ${project.status}`,
 });
 
-if (project.kind === "mobile-app") {
+if (project.kind === "mobile-app" || project.kind === "cli") {
   rows.push({ term: t("meta.platform"), value: project.platform });
 }
 if (project.kind === "python-lib") {
