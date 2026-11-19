@@ -2,7 +2,7 @@
   "name": "tsutsu3.github.io",
   "type": "module",
   "version": "0.0.0",
-  "packageManager": "pnpm@10.31.0",
+  "packageManager": "pnpm@10.34.9",
   "scripts": {
     "dev": "astro dev",
     "build": "astro check && astro build",
@@ -17,19 +17,19 @@
     "delete:dev": "wrangler delete --env dev"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.7.4",
-    "astro": "^7.4.7"
+    "@astrojs/sitemap": "^3.7.6",
+    "astro": "^7.4.13"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.10",
+    "@astrojs/check": "^0.9.12",
     "@eslint/js": "^10.0.1",
-    "eslint": "^10.10.0",
-    "eslint-plugin-astro": "^3.1.0",
-    "globals": "^17.12.0",
-    "prettier": "^3.9.6",
-    "prettier-plugin-astro": "^0.14.1",
+    "eslint": "^10.15.0",
+    "eslint-plugin-astro": "^3.2.1",
+    "globals": "^17.14.0",
+    "prettier": "^3.10.1",
+    "prettier-plugin-astro": "^1.1.2",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.69.0",
-    "wrangler": "^4.129.0"
+    "typescript-eslint": "^8.73.0",
+    "wrangler": "^4.165.0"
   }
 }
